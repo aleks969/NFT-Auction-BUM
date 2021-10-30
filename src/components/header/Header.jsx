@@ -1,11 +1,7 @@
 import * as React from "react";
-import Grid from "@mui/material/Grid";
-import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
-import Input from "@mui/material/Input";
+import { Grid, Container, Button, Input, InputAdornment } from "@mui/material";
 import { TextField, OutlinedInput } from "@mui/material";
 import Search from "@mui/icons-material/Search";
-import InputAdornment from "@mui/material/InputAdornment";
 import Logo from "../logo/Logo";
 import styles from "./Header.module.scss";
 import classNames from "classnames";
