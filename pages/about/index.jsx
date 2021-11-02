@@ -9,6 +9,45 @@ import Footer from "../../src/components/footer/Footer";
 import User from "../../src/components/user/User";
 import Trending from "../../src/components/trending/Trending";
 import Header from "../../src/components/header/Header";
+import Auctions from "../../src/components/auctions/Auctions";
+import TopCollectors from "../../src/components/collectors/TopCollectors";
+
+const auctionProps = {
+  cards: [
+    {
+      name: "Clock",
+      user: { avatarUrl: "images/avatar.png", verified: true },
+      mediaUrl: "images/nft.jpg",
+      price: 200,
+      currency: "BTC",
+      timeLeft: 3.6e6,
+    },
+    {
+      name: "DOGE",
+      user: { avatarUrl: "images/avatar.png", verified: true },
+      mediaUrl: "images/nft.jpg",
+      price: 200,
+      currency: "BTC",
+      timeLeft: 3.6e6,
+    },
+    {
+      name: "BTC",
+      user: { avatarUrl: "images/avatar.png", verified: true },
+      mediaUrl: "images/nft.jpg",
+      price: 100,
+      currency: "BTC",
+      timeLeft: 3.6e6,
+    },
+    {
+      name: "Litecoin",
+      user: { avatarUrl: "images/avatar.png", verified: true },
+      mediaUrl: "images/nft.jpg",
+      price: 300,
+      currency: "BTC",
+      timeLeft: 3.6e6,
+    },
+  ],
+};
 
 const userProps = {
   name: "Okay",
@@ -60,14 +99,96 @@ const trendingProps = {
   ],
 };
 
+const TopCollectorsProps = {
+  collectors: [
+    {
+      name: "Peter",
+      nftsCount: 12312,
+      avatar: "/images/avatar.png",
+      verified: true,
+    },
+    {
+      name: "John",
+      nftsCount: 1111,
+      avatar: "/images/avatar.png",
+      verified: true,
+    },
+    {
+      name: "Steven",
+      nftsCount: 52,
+      avatar: "/images/avatar.png",
+      verified: true,
+    },
+    {
+      name: "Antonio Banderas",
+      nftsCount: 3,
+      avatar: "/images/avatar.png",
+      verified: true,
+    },
+    {
+      name: "Donald",
+      nftsCount: 12,
+      avatar: "/images/avatar.png",
+      verified: true,
+    },
+    {
+      name: "Peter",
+      nftsCount: 12312,
+      avatar: "/images/avatar.png",
+      verified: true,
+    },
+    {
+      name: "John",
+      nftsCount: 1111,
+      avatar: "/images/avatar.png",
+      verified: true,
+    },
+    {
+      name: "Steven",
+      nftsCount: 52,
+      avatar: "/images/avatar.png",
+      verified: true,
+    },
+    {
+      name: "Antonio Banderas",
+      nftsCount: 3,
+      avatar: "/images/avatar.png",
+      verified: true,
+    },
+    {
+      name: "Donald",
+      nftsCount: 12,
+      avatar: "/images/avatar.png",
+      verified: true,
+    },
+    {
+      name: "Antonio Banderas",
+      nftsCount: 3,
+      avatar: "/images/avatar.png",
+      verified: true,
+    },
+    {
+      name: "Donald",
+      nftsCount: 12,
+      avatar: "/images/avatar.png",
+      verified: true,
+    },
+  ],
+};
+
 export default function About() {
   return (
     <>
       <Header />
+      <Footer />
+      <br />
+      <User {...userProps} />
+      <br />
+      <TopCollectors {...TopCollectorsProps} />
+      <br />
+      <Auctions cards={auctionProps.cards} />
       <br />
       <Trending cards={trendingProps.cards} />
-      <br />
-      <Card {...cardProps} timeLeft={100000} />
       <br />
       <Card {...cardProps} />
       <br />
@@ -80,7 +201,6 @@ export default function About() {
           </Grid>
         </Grid>
       </Container>
-      <Footer muted={"muted"} />
     </>
   );
 }
