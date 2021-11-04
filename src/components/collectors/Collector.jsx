@@ -1,34 +1,43 @@
+import { Grid, Container } from "@mui/material";
 import User from "../user/User";
+import classNames from "classnames";
 import styles from "./Collector.module.scss";
-import { Grid } from "@mui/material";
 
 export default function Collector({
+  id,
   name,
   nftsCount,
   avatar,
   verified,
-  id,
   type,
 }) {
-  const checkType = (type) => (type === "light" ? styles.light : undefined);
+  const containerBgStyle = type === "light" ? "rgba(78, 36, 242, 0.25)" : null;
+  const idBgStyle = type === "light" ? "rgba(78, 36, 242, 0.4)" : null;
+  // background-color: rgba(78, 36, 242, 0.25);
   return (
-    <div className={styles.Collector}>
-      <div className={styles.container}>
-        <Grid container className={checkType(type)}>
-          <Grid item className={styles.number} xs={3}>
-            <p>{id}</p>
-          </Grid>
-          <Grid item className={styles.main} xs={9}>
-            <User
-              name={name}
-              info={nftsCount + " items"}
-              size={42}
-              avatar={avatar}
-              verified={verified}
-            />
-          </Grid>
+    <div
+      className={classNames(styles.container)}
+      style={{ backgroundColor: containerBgStyle }}
+    >
+      <Grid container className={classNames(styles.grid)}>
+        <Grid
+          item
+          xs={3}
+          className={classNames(styles.id)}
+          style={{ backgroundColor: idBgStyle }}
+        >
+          {id}
         </Grid>
-      </div>
+        <Grid item xs={9} className={classNames(styles.userContainer)}>
+          <User
+            name={name}
+            info={`${nftsCount} item${nftsCount > 1 ? "s" : ""}`}
+            avatar={avatar}
+            verified={verified}
+            size={50}
+          />
+        </Grid>
+      </Grid>
     </div>
   );
 }

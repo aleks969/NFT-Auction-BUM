@@ -1,5 +1,7 @@
-.column {
-  width: 100%;
-  border-radius: 0.8rem !important;
-  overflow: hidden !important;
+@use "../../styles/colors";
+
+.container {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
 }

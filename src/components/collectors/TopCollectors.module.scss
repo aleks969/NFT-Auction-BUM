@@ -1,10 +1,25 @@
-@use "../../styles/colors.scss";
+@use "../../styles/colors";
 
-.TopCollectors {
-  background-color: rgba(colors.$primary_main, 10%);
-  padding-bottom: 2.5rem;
+.container {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0 !important;
+
+  .CollectorColumns {
+    display: flex !important;
+    align-items: stretch;
+    justify-content: center;
+  }
+}
+
+.title {
+  margin-top: 0.7rem !important;
+  margin-left: 0.7rem !important;
 }
 
 .select {
-  align-self: center;
+  svg {
+    color: white !important;
+  }
 }

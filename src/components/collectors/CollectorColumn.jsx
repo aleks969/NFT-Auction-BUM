@@ -1,18 +1,22 @@
-import styles from "./CollectorColumn.module.scss";
+import { Container, Grid } from "@mui/material";
 import Collector from "./Collector";
+import classNames from "classnames";
+import styles from "./CollectorColumn.module.scss";
 
 export default function CollectorColumn({ items = [] }) {
   return (
-    <div className={styles.CollectorColumn}>
-      <div className={styles.column}>
-        {items.slice(0, 3).map((item, index) => {
-          return index % 2 !== 0 ? (
-            <Collector {...item} type={"light"} key={index} />
-          ) : (
-            <Collector {...item} key={index} />
+    <Grid container spacing={2} className={classNames(styles.container)}>
+      <Grid item xs={12} className={classNames(styles.collectors)}>
+        {items.map((item, idx) => {
+          return (
+            <Collector
+              type={(idx + 1) % 2 === 0 ? "light" : ""}
+              {...item}
+              key={`${idx + 1}${item.name}`}
+            />
           );
         })}
-      </div>
-    </div>
+      </Grid>
+    </Grid>
   );
 }
