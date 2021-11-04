@@ -7,6 +7,7 @@ import {
   FormControl,
   Stack,
 } from "@mui/material";
+import _ from "lodash";
 import { chunk } from "lodash";
 import CollectorColumn from "./CollectorColumn";
 import styles from "./TopCollectors.module.scss";
@@ -30,7 +31,7 @@ export default function TopCollectors({ collectors = [] }) {
     ...element,
     id: idx + 1,
   }));
-  const collectorChunks = chunk(res, 3);
+  const collectorChunks = _.chunk(res, 3);
 
   const handleChange = (event) => {
     setTimeOption(event.target.value);
