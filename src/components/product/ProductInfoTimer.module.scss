@@ -1,0 +1,33 @@
+@use "../../styles/colors";
+
+.title {
+  font-weight: 700;
+  color: colors.$text_primary;
+}
+
+.product-info-timer {
+  width: 100%;
+}
+
+.title-container {
+  display: flex !important;
+  justify-content: center !important;
+  height: 50px;
+}
+
+.timer {
+  font-weight: 700;
+  color: colors.$text_primary;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center;
+  height: 90px;
+}
+
+.active {
+  background-color: colors.$secondary_main;
+}
+
+.card {
+  height: 135px;
+}
