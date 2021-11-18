@@ -23,7 +23,7 @@ export default function ProductInfoTimer({ timeEnd, onTimeEnd }) {
             <Countdown
               onComplete={onTimeEnd}
               className={classNames(styles.liveCountdown)}
-              date={Date.now() + timeLeft}
+              date={Date.now() + timeEnd}
             />
           )}
         </div>
