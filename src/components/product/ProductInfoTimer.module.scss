@@ -1,33 +1,36 @@
 @use "../../styles/colors";
 
-.title {
-  font-weight: 700;
-  color: colors.$text_primary;
-}
-
 .product-info-timer {
   width: 100%;
-}
 
-.title-container {
-  display: flex !important;
-  justify-content: center !important;
-  height: 50px;
-}
+  .card {
+    height: 140px;
+  }
 
-.timer {
-  font-weight: 700;
-  color: colors.$text_primary;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center;
-  height: 90px;
-}
+  .title-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    opacity: 0.8;
+    height: 50px;
 
-.active {
-  background-color: colors.$secondary_main;
-}
+    .title {
+      font-weight: 700;
+      color: colors.$background_paper;
+    }
+  }
 
-.card {
-  height: 135px;
+  .timer {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    font-weight: 700;
+    color: colors.$background_paper;
+    font-size: 2.5rem;
+    height: 90px;
+  }
+
+  .active {
+    background-color: colors.$secondary_main;
+  }
 }
