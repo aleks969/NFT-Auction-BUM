@@ -1,7 +1,7 @@
-import classNames from "classnames";
-import styles from "./ProductInfoTimer.module.scss";
 import { Card, Container, Typography } from "@mui/material";
-import Countdown from "react-countdown";
+import Countdown, { zeroPad } from "react-countdown";
+import styles from "./ProductInfoTimer.module.scss";
+import classNames from "classnames";
 
 export default function ProductInfoTimer({ timeEnd, onTimeEnd }) {
   return (
@@ -22,8 +22,13 @@ export default function ProductInfoTimer({ timeEnd, onTimeEnd }) {
           {timeEnd && (
             <Countdown
               onComplete={onTimeEnd}
-              className={classNames(styles.liveCountdown)}
-              date={Date.now() + timeEnd}
+              className={classNames(styles.countdown)}
+              date={timeEnd}
+              renderer={({ hours, minutes, seconds }) => (
+                <span suppressHydrationWarning={true}>
+                  {zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
+                </span>
+              )}
             />
           )}
         </div>
