@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import dataNfts from "../../../data/nfts.json";
 import { useRouter } from "next/router";
-import Header from "../../../src/components/header/Header.jsx";
-import ProductContainer from "../../../src/components/product/ProductContainer.jsx";
-import Footer from "../../../src/components/footer/Footer.jsx";
+import Header from "../../../src/components/header/Header";
+import ProductContainer from "../../../src/components/product/ProductContainer";
+import Footer from "../../../src/components/footer/Footer";
 
 export default function Index() {
   const router = useRouter();
