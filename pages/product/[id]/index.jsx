@@ -7,12 +7,14 @@ import Footer from "../../../src/components/footer/Footer";
 
 export default function Index() {
   const router = useRouter();
-  const { id } = router.query;
   const [nft, seNft] = useState(null);
 
   useEffect(() => {
-    seNft(dataNfts.find((nft) => nft.id == id));
-  }, []);
+    if (router.isReady) {
+      const { id } = router.query;
+      seNft(dataNfts.find((nft) => nft.id == id));
+    }
+  }, [router]);
 
   const mockBids = [
     {
