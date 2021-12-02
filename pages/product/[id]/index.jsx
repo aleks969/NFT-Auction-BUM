@@ -5,7 +5,7 @@ import Header from "../../../src/components/header/Header";
 import ProductContainer from "../../../src/components/product/ProductContainer";
 import Footer from "../../../src/components/footer/Footer";
 
-export default function Index() {
+export default function Product() {
   const router = useRouter();
   const [nft, seNft] = useState(null);
 
